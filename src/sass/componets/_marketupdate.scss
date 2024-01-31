@@ -1,5 +1,14 @@
 .market {
   height: 100vh;
+  background-color: #27005d;
+
+  .market-update {
+    h1 {
+      font-size: 2.5rem;
+      color: #e4f1ff;
+      margin: 40px 0;
+    }
+  }
 
   .pagination {
     display: flex;
@@ -7,7 +16,6 @@
     align-items: center;
     justify-content: center;
     color: #000;
-    background-color: #fff;
     margin-top: 2rem;
 
     button {
@@ -17,3 +25,32 @@
     }
   }
 }
+
+.ant-table-thead {
+  background: linear-gradient(25deg, #2600fc, #ff00ea) !important;
+  color: white;
+}
+
+.ant-table-cell {
+  background: none !important;
+  text-align: center !important;
+}
+
+.ant-table-tbody {
+  background-color: #27005d;
+  color: white;
+}
+
+td,
+th {
+  border-right: none !important;
+  font-size: 1.3rem;
+}
+
+// tbody .green-text {
+//   color: lightgreen !important;
+// }
+
+// tbody .red-text {
+//   color: red !important;
+// }
