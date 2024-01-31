@@ -1,0 +1,51 @@
+.sticky-nav {
+  position: fixed;
+  background-color: #ecf2ff;
+  color: #000;
+
+  li {
+    a {
+      color: #000 !important;
+    }
+  }
+}
+
+nav {
+  background-color: #27005d;
+  padding: 2rem 4rem;
+  font-size: 1.5rem;
+  color: #aed2ff;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2000;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      cursor: pointer;
+    }
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      gap: 2rem;
+
+      li {
+        a {
+          text-decoration: none;
+          color: #aed2ff;
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}

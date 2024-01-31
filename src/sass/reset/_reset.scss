@@ -1,0 +1,14 @@
+@use "../variables/" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 80rem !important;
+  margin: 0 auto !important;
+  padding: 0 2.5rem !important;
+  border: 2px solid black;
+}
