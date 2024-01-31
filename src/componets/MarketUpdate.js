@@ -9,15 +9,27 @@ const MarketUpdate = () => {
   const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=10&page=${currentPage}&sparkline=false&locale=en`;
 
   useEffect(() => {
-    const fetchRecords = () => {
+    // const fetchRecords = () => {
+    //   setLoading(true);
+    //   fetch(url).then((res) => {
+    //     res.json().then((response) => {
+    //       console.log(response);
+    //       setData(response);
+    //       setLoading(false);
+    //     });
+    //   });
+    // };
+    const fetchRecords = async () => {
       setLoading(true);
-      fetch(url).then((res) => {
-        res.json().then((response) => {
-          console.log(response);
-          setData(response);
-          setLoading(false);
-        });
-      });
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchRecords();
   }, [url]);
@@ -43,15 +55,20 @@ const MarketUpdate = () => {
       //     : "green-text";
       // },
       render: (text, record) => {
-        console.log("Record:", record);
-        console.log("Percentage:", record.price_change_percentage_24h);
+        // console.log("Record:", record);
+        // console.log("Percentage:", record.price_change_percentage_24h);
+
+        console.log(
+          "Type of record",
+          typeof record.price_change_percentage_24h
+        );
         return (
           <span
             style={{
               color: record.price_change_percentage_24h <= 0 ? "red" : "green",
             }}
           >
-            {record.price_change_percentage_24h}%
+            {record.price_change_percentage_24h}
           </span>
         );
       },
@@ -66,9 +83,7 @@ const MarketUpdate = () => {
     // ...item,
     name: item.name,
     current_price: `₹ ${item.current_price.toLocaleString()}`,
-    price_change_percentage_24h: `${item.price_change_percentage_24h.toFixed(
-      2
-    )}%`,
+    price_change_percentage_24h: item.price_change_percentage_24h,
     market_cap: `₹ ${item.market_cap.toLocaleString()}`,
   }));
 
@@ -115,16 +130,3 @@ const MarketUpdate = () => {
 };
 
 export default MarketUpdate;
-
-// const fetchRecords = async () => {
-//   setLoading(true);
-//   try {
-//     const response = await fetch(url);
-//     const data = await response.json();
-//     setData(data);
-//   } catch (error) {
-//     console.error('Error fetching data:', error);
-//   } finally {
-//     setLoading(false);
-//   }
-// };
