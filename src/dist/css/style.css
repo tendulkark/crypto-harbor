@@ -8,11 +8,10 @@
   max-width: 80rem !important;
   margin: 0 auto !important;
   padding: 0 2.5rem !important;
-  border: 2px solid black;
 }
 
 .home {
-  height: 100vh;
+  height: 100%;
   margin-top: 5rem;
   background-color: #27005d;
   padding: 6rem 0;
@@ -142,7 +141,7 @@ nav .navbar ul li a {
 }
 
 .market {
-  height: 100vh;
+  height: 100%;
   background-color: #27005d;
 }
 .market .market-update h1 {
@@ -162,6 +161,7 @@ nav .navbar ul li a {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .ant-table-thead {
