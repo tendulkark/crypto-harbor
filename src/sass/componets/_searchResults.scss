@@ -1,0 +1,21 @@
+.search-results {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 6.5rem;
+  top: 5rem;
+  width: auto;
+  //   border: 1px solid black;
+
+  .name {
+    color: red;
+  }
+
+  .symbol {
+    color: rgb(1, 255, 1);
+  }
+
+  .rank {
+    color: blue;
+  }
+}

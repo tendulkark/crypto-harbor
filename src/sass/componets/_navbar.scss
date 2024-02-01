@@ -57,3 +57,24 @@ nav {
     margin-left: 20px;
   }
 }
+
+.search-bar {
+  input {
+    padding: 10px 20px;
+    text-align: start;
+  }
+}
+
+.input {
+  border: 2px solid #aed2ff;
+  border-radius: 20px;
+}
+
+::placeholder {
+  font-weight: 500;
+  color: #7db3f4;
+}
+
+a {
+  cursor: pointer;
+}

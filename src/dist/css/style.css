@@ -150,6 +150,30 @@ nav .navbar ul li a {
   margin-left: 20px;
 }
 
+.search-bar input {
+  padding: 10px 20px;
+  text-align: start;
+}
+
+.input {
+  border: 2px solid #aed2ff;
+  border-radius: 20px;
+}
+
+::-moz-placeholder {
+  font-weight: 500;
+  color: #7db3f4;
+}
+
+::placeholder {
+  font-weight: 500;
+  color: #7db3f4;
+}
+
+a {
+  cursor: pointer;
+}
+
 .market {
   height: 100%;
   background-color: #0f051d;
@@ -350,4 +374,22 @@ footer {
   font-weight: 500;
   font-size: 1.3rem;
   cursor: pointer;
+}
+
+.search-results {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 6.5rem;
+  top: 5rem;
+  width: auto;
+}
+.search-results .name {
+  color: red;
+}
+.search-results .symbol {
+  color: rgb(1, 255, 1);
+}
+.search-results .rank {
+  color: blue;
 }/*# sourceMappingURL=style.css.map */

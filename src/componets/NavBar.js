@@ -1,7 +1,22 @@
 import { useState } from "react";
 
-const NavBar = () => {
+const NavBar = ({ setResults }) => {
   const [sticky, setSticky] = useState(false);
+  const [input, setInput] = useState("");
+
+  const url = `https://api.coingecko.com/api/v3/search?query=${input}`;
+
+  const fetchData = (value) => {
+    fetch(url).then((res) =>
+      res.json().then((json) => {
+        const searchResult = Object.values(json.coins).filter((coin) => {
+          return value && coin && coin.name.toLowerCase().includes(value);
+        });
+        console.log("#Search Result: ", searchResult);
+        setResults(searchResult);
+      })
+    );
+  };
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
@@ -14,6 +29,14 @@ const NavBar = () => {
   const toTop = () => {
     window.scrollTo(0, 0);
   };
+
+  const handleChange = (value) => {
+    // console.log(value);
+    setInput(value);
+    fetchData(value);
+  };
+
+  console.log("search :", input);
 
   window.addEventListener("scroll", handleScroll);
   return (
@@ -43,7 +66,7 @@ const NavBar = () => {
               </ul>
             </div>
             <div className="socials-link">
-              <span>
+              {/* <span>
                 <a href="https://twitter.com/coingecko/" target="_blank">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +100,14 @@ const NavBar = () => {
                     <path d="M7 16.5c3.5 1 6.5 1 10 0"></path>
                   </svg>
                 </a>
+              </span> */}
+              <span className="search-bar">
+                <input
+                  className="input"
+                  placeholder="Search Coin"
+                  value={input}
+                  onChange={(e) => handleChange(e.target.value)}
+                ></input>
               </span>
             </div>
           </div>
@@ -87,3 +118,17 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+// const jsonUrl = "https://jsonplaceholder.typicode.com/users";
+// console.log("json return", json);
+// console.log(typeof json);
+// console.log("coins only", json.coins);
+// const result = json.filter((user) => {
+//   return (
+//     value &&
+//     user &&
+//     user.name &&
+//     user.name.toLowerCase().includes(value)
+//   );
+// });
+// console.log(result);
