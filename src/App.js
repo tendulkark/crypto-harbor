@@ -1,6 +1,9 @@
+import Footer from "./componets/Footer";
 import Hero from "./componets/Hero";
+import Join from "./componets/Join";
 import MarketUpdate from "./componets/MarketUpdate";
 import NavBar from "./componets/NavBar";
+import WhyUs from "./componets/WhyUs";
 import "./dist/css/style.css";
 
 function App() {
@@ -9,6 +12,9 @@ function App() {
       <NavBar />
       <Hero />
       <MarketUpdate />
+      <WhyUs />
+      <Join />
+      <Footer />
     </div>
   );
 }
