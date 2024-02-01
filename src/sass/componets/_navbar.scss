@@ -63,6 +63,9 @@ nav {
     padding: 10px 20px;
     text-align: start;
   }
+  input:focus {
+    outline: none;
+  }
 }
 
 .input {

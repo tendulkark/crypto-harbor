@@ -154,6 +154,9 @@ nav .navbar ul li a {
   padding: 10px 20px;
   text-align: start;
 }
+.search-bar input:focus {
+  outline: none;
+}
 
 .input {
   border: 2px solid #aed2ff;
@@ -230,7 +233,6 @@ th {
   padding: 100px 0;
   height: 100%;
   color: #000;
-  background-color: #27005d;
   background-color: #0f051d;
 }
 .whyus .choose-container h1 {
@@ -380,15 +382,25 @@ footer {
   position: absolute;
   display: flex;
   flex-direction: column;
-  right: 6.5rem;
+  right: 8rem;
   top: 5rem;
-  width: auto;
+  width: 450px;
+  z-index: 100;
+  border-radius: 30px;
+  max-height: 300px;
+  overflow-y: hidden;
+}
+.search-results .search-values {
+  background-color: #fff;
+  max-height: 300px;
+  padding: 5px 0;
+  padding-left: 20px;
 }
 .search-results .name {
   color: red;
 }
 .search-results .symbol {
-  color: rgb(1, 255, 1);
+  color: rgba(0, 255, 0, 0.909);
 }
 .search-results .rank {
   color: blue;

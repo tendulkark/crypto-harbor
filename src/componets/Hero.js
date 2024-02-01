@@ -5,22 +5,23 @@ import eth from "../assets/eth.png";
 
 const Hero = () => {
   const [data, setData] = useState([]);
+
+  const url =
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=4&page=1&sparkline=false&locale=en";
   useEffect(() => {
     fetchRecords();
   }, []);
 
-  const fetchRecords = () => {
-    fetch(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=4&page=1&sparkline=false&locale=en"
-    ).then((res) => {
-      res.json().then((response) => {
-        // console.log("useEffect response", response);
-        setData(response);
-      });
-    });
+  const fetchRecords = async () => {
+    try {
+      const response = await fetch(url);
+      const fetchData = await response.json();
+      setData(fetchData);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
-  // console.log("Data Response", data);
   let newData = [];
   newData = data.slice();
 
@@ -72,7 +73,6 @@ const Hero = () => {
       </section>
     </>
   );
-  // return <div className="home"></div>;
 };
 
 export default Hero;

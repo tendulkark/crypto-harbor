@@ -14,11 +14,11 @@ function App() {
     <div className="App">
       <NavBar setResults={setResults} />
       <SearchResults results={results} />
-      {/* <Hero />
+      <Hero />
       <MarketUpdate />
       <WhyUs />
       <Join />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }

@@ -59,7 +59,7 @@ const MarketUpdate = () => {
   ];
 
   const transformedData = data.map((item) => ({
-    // ...item,
+    ...item,
     name: item.name,
     current_price: `₹ ${item.current_price.toLocaleString()}`,
     price_change_percentage_24h: item.price_change_percentage_24h,
