@@ -1,9 +1,3 @@
-import wallet from "../assets/wallet.png";
-import select from "../assets/select.png";
-import transaction from "../assets/transaction.png";
-import receive from "../assets/receive.png";
-import sell from "../assets/sell.png";
-import drive from "../assets/drive.png";
 import whyus from "../assets/why-us_btc.png";
 
 const WhyUs = () => {

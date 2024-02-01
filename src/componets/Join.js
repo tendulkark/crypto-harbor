@@ -2,6 +2,10 @@ import btc from "../assets/btc.png";
 import eth from "../assets/eth.png";
 
 const Join = () => {
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section className="join" id="join">
       <div className="container">
@@ -15,7 +19,14 @@ const Join = () => {
           </div>
           <p>Invest and manage all your crypto at one place.</p>
           <div className="join-content__button">
-            <button type="button">Join Via Discord</button>
+            <button
+              type="button"
+              onClick={() =>
+                openInNewTab("https://discord.com/invite/EhrkaCH/")
+              }
+            >
+              Join Via Discord
+            </button>
           </div>
         </div>
       </div>

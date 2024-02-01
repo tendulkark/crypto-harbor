@@ -1,0 +1,31 @@
+.search-results {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 8rem;
+  top: 5rem;
+  width: 450px;
+  z-index: 100;
+  border-radius: 30px;
+  max-height: 300px;
+  overflow-y: hidden;
+
+  .search-values {
+    background-color: #fff;
+    max-height: 300px;
+    padding: 5px 0;
+    padding-left: 20px;
+  }
+
+  .name {
+    color: red;
+  }
+
+  .symbol {
+    color: rgba(0, 255, 0, 0.909);
+  }
+
+  .rank {
+    color: blue;
+  }
+}
