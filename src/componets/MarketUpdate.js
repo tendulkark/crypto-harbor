@@ -36,10 +36,10 @@ const MarketUpdate = () => {
     {
       title: "24h Change",
       render: (text, record) => {
-        console.log(
-          "Type of record",
-          typeof record.price_change_percentage_24h
-        );
+        // console.log(
+        //   "Type of record",
+        //   typeof record.price_change_percentage_24h
+        // );
         return (
           <span
             style={{
@@ -86,6 +86,13 @@ const MarketUpdate = () => {
     );
   }
 
+  const scrollMarket = () => {
+    window.scrollTo({
+      top: window.scrollY - 500,
+      behavior: "smooth",
+    });
+  };
+
   // console.log("Transfomred Data", transformedData);
   // console.log("Market Update: ", data);
   return (
@@ -99,8 +106,11 @@ const MarketUpdate = () => {
               dataSource={transformedData}
               pagination={false}
               loading={loading}
+              rowKey="id"
             ></Table>
-            <div className="pagination">{paginations}</div>
+            <div className="pagination" onClick={scrollMarket}>
+              {paginations}
+            </div>
           </div>
         </div>
       </section>

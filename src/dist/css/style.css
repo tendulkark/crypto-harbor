@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -14,9 +15,9 @@
 
 .home {
   height: 100%;
-  margin-top: 5rem;
   background-image: linear-gradient(0deg, #0f051d 30%, #130749 70%);
-  padding: 6rem 0;
+  padding-top: 11.5rem;
+  padding-bottom: 5rem;
 }
 
 .home-content__text {
@@ -109,7 +110,6 @@
 }
 
 nav {
-  background-color: #27005d;
   padding: 2rem 4rem;
   font-size: 1.5rem;
   color: #aed2ff;
@@ -142,6 +142,14 @@ nav .navbar ul li a {
   justify-content: space-between;
 }
 
+.socials-link {
+  cursor: pointer;
+}
+.socials-link a {
+  color: white;
+  margin-left: 20px;
+}
+
 .market {
   height: 100%;
   background-color: #0f051d;
@@ -151,6 +159,10 @@ nav .navbar ul li a {
   font-size: 2.5rem;
   color: #e4f1ff;
   margin: 40px 0;
+}
+.market .activePage {
+  color: white;
+  background-image: linear-gradient(25deg, #2600fc, #ff00ea);
 }
 .market .pagination {
   display: flex;
@@ -165,6 +177,7 @@ nav .navbar ul li a {
   height: 3rem;
   border-radius: 50%;
   cursor: pointer;
+  border: none;
 }
 
 .ant-table-thead {
@@ -314,4 +327,27 @@ th {
 }
 .join .join-content__button button:hover {
   background-position: right center;
+}
+
+footer {
+  background-color: #0f051d;
+  height: 15rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content__socials svg {
+  margin: 20px 20px;
+  cursor: pointer;
+}
+.footer-content__text {
+  display: flex;
+  gap: 2rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
