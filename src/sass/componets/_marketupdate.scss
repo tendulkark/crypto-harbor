@@ -11,6 +11,11 @@
     }
   }
 
+  .activePage {
+    color: white;
+    background-image: linear-gradient(25deg, #2600fc, #ff00ea);
+  }
+
   .pagination {
     display: flex;
     gap: 2rem;
@@ -24,6 +29,7 @@
       height: 3rem;
       border-radius: 50%;
       cursor: pointer;
+      border: none;
     }
   }
 }
