@@ -33,25 +33,29 @@
     }
   }
 }
+// .marketupdate-table {
+.market-update {
+  .ant-table-thead {
+    background: linear-gradient(25deg, #2600fc, #ff00ea) !important;
+    color: white;
+  }
 
-.ant-table-thead {
-  background: linear-gradient(25deg, #2600fc, #ff00ea) !important;
-  color: white;
+  .ant-table-cell {
+    background: none !important;
+    text-align: center !important;
+  }
+
+  .ant-table-tbody {
+    background-color: #27005d;
+    color: white;
+  }
+
+  td,
+  th {
+    border-right: none !important;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
 }
 
-.ant-table-cell {
-  background: none !important;
-  text-align: center !important;
-}
-
-.ant-table-tbody {
-  background-color: #27005d;
-  color: white;
-}
-
-td,
-th {
-  border-right: none !important;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
+// }

@@ -1,25 +1,34 @@
+import { Table } from "antd";
 import React from "react";
 
 const SearchResults = ({ results }) => {
+  // console.log("results", results);
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+    },
+    {
+      title: "Symbol",
+      dataIndex: "symbol",
+    },
+    {
+      title: "Rank",
+      dataIndex: "market_cap_rank",
+    },
+  ];
   return (
     <div className="search-results">
-      {results.map((result, id) => {
-        return (
-          <div key={id} className="search-values">
-            <span>
-              Name: <span className="name">{result.name}</span> &nbsp;
-            </span>
-            <span>
-              &nbsp;Symbol: <span className="symbol">{result.symbol} </span>
-              &nbsp;
-            </span>
-            <span>
-              Rank: &nbsp;<span className="rank">{result.market_cap_rank}</span>{" "}
-              &nbsp;
-            </span>
-          </div>
-        );
-      })}
+      <div className="search-values">
+        {results.length > 0 && (
+          <Table
+            dataSource={results}
+            columns={columns}
+            pagination={false}
+            className="searchresults-table"
+          ></Table>
+        )}
+      </div>
     </div>
   );
 };

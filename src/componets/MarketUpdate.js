@@ -36,10 +36,6 @@ const MarketUpdate = () => {
     {
       title: "24h Change",
       render: (text, record) => {
-        // console.log(
-        //   "Type of record",
-        //   typeof record.price_change_percentage_24h
-        // );
         return (
           <span
             style={{
@@ -107,6 +103,7 @@ const MarketUpdate = () => {
               pagination={false}
               loading={loading}
               rowKey="id"
+              // className="marketupdate-table"
             ></Table>
             <div className="pagination" onClick={scrollMarket}>
               {paginations}

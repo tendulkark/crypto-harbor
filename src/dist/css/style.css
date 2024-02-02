@@ -69,6 +69,10 @@
 .slider-coin__image {
   width: 6rem;
   height: 6rem;
+  -webkit-transition: -webkit-transform 1s;
+}
+.slider-coin img:hover {
+  -webkit-transform: rotate(360deg) translateZ(0);
 }
 .slider-coin__name {
   font-size: 1.1rem;
@@ -164,13 +168,11 @@ nav .navbar ul li a {
 }
 
 ::-moz-placeholder {
-  font-weight: 500;
-  color: #7db3f4;
+  color: #59a0f8;
 }
 
 ::placeholder {
-  font-weight: 500;
-  color: #7db3f4;
+  color: #59a0f8;
 }
 
 a {
@@ -207,23 +209,20 @@ a {
   border: none;
 }
 
-.ant-table-thead {
+.market-update .ant-table-thead {
   background: linear-gradient(25deg, #2600fc, #ff00ea) !important;
   color: white;
 }
-
-.ant-table-cell {
+.market-update .ant-table-cell {
   background: none !important;
   text-align: center !important;
 }
-
-.ant-table-tbody {
+.market-update .ant-table-tbody {
   background-color: #27005d;
   color: white;
 }
-
-td,
-th {
+.market-update td,
+.market-update th {
   border-right: none !important;
   font-size: 1.3rem;
   font-weight: 700;
@@ -378,7 +377,24 @@ footer {
   cursor: pointer;
 }
 
-.search-results {
+.disclaimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+.disclaimer img {
+  width: 2rem;
+  height: 2rem;
+}
+.disclaimer p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(255, 0, 0);
+}
+
+body .search-results {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -386,22 +402,48 @@ footer {
   top: 5rem;
   width: 450px;
   z-index: 100;
-  border-radius: 30px;
-  max-height: 300px;
-  overflow-y: hidden;
+  max-height: 330px;
+  height: 263px;
+  overflow-y: auto;
+  padding-right: 10px;
 }
-.search-results .search-values {
-  background-color: #fff;
-  max-height: 300px;
+body .search-results .search-values {
   padding: 5px 0;
   padding-left: 20px;
 }
-.search-results .name {
+body .search-results .search-values .ant-table-thead {
+  background: #e7eaf6 !important;
+  color: #e7eaf6;
+  border-radius: 0 !important;
+}
+body .search-results .search-values .ant-table-cell {
+  background: none !important;
+  padding: 10px 30px;
+}
+body .search-results .search-values .ant-table-tbody {
+  background-color: #38598b;
+  color: white;
+}
+body .search-results .name {
   color: red;
 }
-.search-results .symbol {
+body .search-results .symbol {
   color: rgba(0, 255, 0, 0.909);
 }
-.search-results .rank {
+body .search-results .rank {
   color: blue;
+}
+
+body .search-results::-webkit-scrollbar {
+  width: 10px;
+}
+
+body .search-results::-webkit-scrollbar-thumb {
+  background-color: #38598b;
+  border-radius: 5px;
+}
+
+body .search-results::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */

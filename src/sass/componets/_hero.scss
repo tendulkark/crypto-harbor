@@ -54,6 +54,10 @@
   &__image {
     width: 6rem;
     height: 6rem;
+    -webkit-transition: -webkit-transform 1s;
+  }
+  img:hover {
+    -webkit-transform: rotate(360deg) translateZ(0);
   }
 
   &__name {
