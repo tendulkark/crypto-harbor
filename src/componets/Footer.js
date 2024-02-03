@@ -74,7 +74,10 @@ const Footer = () => {
       </div>
       <div className="disclaimer">
         <img src={caution} alt="disclaimer-svg"></img>
-        <p>Disclaimer: This webpage is not reponsive</p>
+        <p>
+          Disclaimer: This webpage is not responsive, Dimension: Responsive of
+          L-1440px
+        </p>
       </div>
     </footer>
   );

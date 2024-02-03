@@ -63,7 +63,7 @@ const MarketUpdate = () => {
   }));
 
   const pageChange = (i) => {
-    console.log("Current Page", i);
+    // console.log("Current Page", i);
     setCurrentPage(i);
   };
 
