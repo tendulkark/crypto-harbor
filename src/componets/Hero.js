@@ -53,7 +53,7 @@ const Hero = () => {
                 <BeatLoader
                   color="#9c2fce"
                   loading={loading}
-                  size={50}
+                  size={30}
                   aria-label="Loading Spinner"
                   data-testid="loader"
                 />

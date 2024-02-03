@@ -115,11 +115,11 @@
 }
 .sticky-nav {
   position: fixed;
-  background-color: #ecf2ff;
-  color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
 }
 .sticky-nav li a {
-  color: #000 !important;
+  color: white !important;
 }
 
 nav {
