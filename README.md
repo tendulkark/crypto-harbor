@@ -15,7 +15,7 @@ _Live Demo:_ [CryptoHarbor Demo](https://crypto-harbor-tau.vercel.app/)
 * Coingecko API
 
 
-# Screen of the project
+# Screenshot of the project
 ![crypto-harbor-screenshot](https://github.com/manotendulkar/crypto-harbor/assets/99658669/62ce1b6f-a913-4a10-9585-bb9cde0b6712)
 
 
