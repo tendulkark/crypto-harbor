@@ -2,9 +2,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 import btc from "../assets/btc.png";
 import eth from "../assets/eth.png";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const Hero = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const url =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=4&page=1&sparkline=false&locale=en";
@@ -13,12 +15,15 @@ const Hero = () => {
   }, []);
 
   const fetchRecords = async () => {
+    setLoading(true);
     try {
       const response = await fetch(url);
       const fetchData = await response.json();
       setData(fetchData);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
+      // setLoading(false);
     }
   };
 
@@ -42,32 +47,45 @@ const Hero = () => {
             <img src={eth} alt="eth-float" className="eth-float"></img>
           </div>
 
-          <div className="home_values">
-            {newData.map((item) => (
-              <article key={item.id} className="slider-coin">
-                <img
-                  src={item?.image}
-                  alt={item?.name}
-                  className="slider-coin__image"
-                ></img>
-                <p className="slider-coin__name">
-                  {item?.name}
-                  <span
-                    className={
-                      "slider-coin__price " +
-                      (item.price_change_percentage_24h <= 0
-                        ? "red-text"
-                        : "green-text")
-                    }
-                  >
-                    &nbsp; {item?.price_change_percentage_24h.toFixed(2) + "%"}
-                  </span>
-                </p>
-                <p className="slider-coin__price">
-                  {"₹ " + numberWithCommas(item.current_price?.toFixed(2))}
-                </p>
-              </article>
-            ))}
+          <div className="home_values" onLoad={() => setLoading(false)}>
+            {loading ? (
+              <div className="loader-container">
+                <BeatLoader
+                  color="#9c2fce"
+                  loading={loading}
+                  size={50}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
+              </div>
+            ) : (
+              newData.map((item) => (
+                <article key={item.id} className="slider-coin">
+                  <img
+                    src={item?.image}
+                    alt={item?.name}
+                    className="slider-coin__image"
+                  ></img>
+                  <p className="slider-coin__name">
+                    {item?.name}
+                    <span
+                      className={
+                        "slider-coin__price " +
+                        (item.price_change_percentage_24h <= 0
+                          ? "red-text"
+                          : "green-text")
+                      }
+                    >
+                      &nbsp;{" "}
+                      {item?.price_change_percentage_24h.toFixed(2) + "%"}
+                    </span>
+                  </p>
+                  <p className="slider-coin__price">
+                    {"₹ " + numberWithCommas(item.current_price?.toFixed(2))}
+                  </p>
+                </article>
+              ))
+            )}
           </div>
         </div>
       </section>
