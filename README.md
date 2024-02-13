@@ -6,7 +6,7 @@ The website is connected to the Coingecko API, which is a popular source of data
 
 ![why-us_btc](https://github.com/manotendulkar/crypto-harbor/assets/99658669/413edfef-3405-4a14-a0bd-89e961d31685)
 
-_Live Demo:_ [CryptoHarbor Demo](https://crypto-harbor-tau.vercel.app/)
+_Live Demo:_ [CryptoHarbor](https://crypto-harbor-tau.vercel.app/)
 
 ## Build with :
 * React
